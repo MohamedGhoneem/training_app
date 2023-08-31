@@ -5,14 +5,13 @@ class FlavorVariablesModel {
   String? iconPath;
   String? baseUrl;
 
-
-  FlavorVariablesModel(
-      {this.title,
-        this.description,
-        this.appId,
-        this.iconPath,
-        this.baseUrl,
-      });
+  FlavorVariablesModel({
+    this.title,
+    this.description,
+    this.appId,
+    this.iconPath,
+    this.baseUrl,
+  });
 
   FlavorVariablesModel.fromJson(Map<String, dynamic> json) {
     title = json['title'];
@@ -20,11 +19,10 @@ class FlavorVariablesModel {
     appId = json['app_id'];
     iconPath = json['icon_path'];
     baseUrl = json['base_url'];
-
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['title'] = title;
     data['description'] = description;
     data['app_id'] = appId;

@@ -1,6 +1,5 @@
-import 'package:app_core/app_core.dart';
+import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../products/view/products_view.dart';
 
