@@ -18,7 +18,7 @@ class ProductsRepo implements ProductsRepoInterface {
           endpoint: 'products', headers: {'lang': 'en'});
       return GetAllProductsResponseModel.fromJson(response?.data);
     } catch (e) {
-      return ErrorModel.fromJson(e as dynamic);
+      return ErrorModel.fromJson(e);
     }
   }
 

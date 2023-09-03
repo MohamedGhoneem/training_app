@@ -19,16 +19,19 @@ class ProductsBloc extends BaseBloc
     checkIsolate();
     var model = await _productsRepo.getProducts();
     // var model2 = await _productsRepo.getProducts2();
-    // if (model is GetAllProductsResponseModel) {
-    //   super.successSubject.sink.add(model);
-    //   requestStateSubject.sink
-    //       .add(RequestState(status: RequestStatus.success, message: 'SUCCESS'));
-    // }
-    // if (model is ErrorModel) {
-      super.errorSubject.sink.add(ErrorModel(statusCode: 500,message: 'test'));
+    if (model is GetAllProductsResponseModel) {
+      super.successSubject.sink.add(model);
+      requestStateSubject.sink
+          .add(RequestState(status: RequestStatus.success, message: 'SUCCESS'));
+    }
+    if (model is ErrorModel) {
+      super
+          .errorSubject
+          .sink
+          .add(ErrorModel(statusCode: 500, message: model.message));
       requestStateSubject.sink.add(RequestState(
-          status: RequestStatus.error, message: 'test'));
-    // }
+          status: RequestStatus.error, message: model.message ?? ''));
+    }
   }
 
   @override
