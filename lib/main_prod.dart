@@ -8,12 +8,10 @@ import 'package:flavorizer_config/flavorizer_config.dart';
 Future main() async {
   final flavorVariablesModel = FlavorVariablesModel()
     ..title = 'Production App'
-    ..iconPath = 'assets/images/icon.png'
-    ..appId = 'com.flavor.app'
-    ..baseUrl = 'https//www.flavor.com'
+    ..baseUrl = 'https//www.flavor.com.prod'
     ..description = 'Production Flavor';
   FlavorizerConfig(
-      title: 'Production',
+      appTitle: 'Production',
       flavor: Flavors.prod,
       variables: flavorVariablesModel.toJson());
   return runApp(const MyApp());

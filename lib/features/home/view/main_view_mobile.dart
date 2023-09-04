@@ -1,7 +1,10 @@
 import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/core/user_types/user_strategy_type.dart';
 
+import '../../../core/user_types/base_user_type.dart';
 import '../../products/view/products_view.dart';
+import 'package:flavorizer_config/flavorizer_config.dart';
 
 class MainViewMobile extends BaseStatefulWidget {
   const MainViewMobile({Key? key}) : super(key: key);
@@ -17,10 +20,15 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
   var encryptedData2;
   var encryptedData3;
   var encryptedData4;
-
+  int userTypeValue = 0; // The initial value representing the user type
+  UserStrategyType userStrategyType = UserStrategyType();
+  BaseUserType? userType;
+  FlavorizerConfig flavorizerConfig=FlavorizerConfig.instance;
   @override
   void initState() {
     super.initState();
+    userType = userStrategyType.getUserType(userTypeValue);
+    debugPrint('flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables?.toString()}');
     _encryptor.init();
     navBarBloc.naveBarItemList = [
       NavBarItem(
@@ -96,6 +104,8 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
           ),
           unSelectedIcon: const Icon(Icons.access_alarm_rounded),
           onTap: () {
+            print('userType?.getTitle() : ${userType?.getTitle()}');
+
             print('index 3');
           }),
     ];
@@ -114,8 +124,6 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
               );
         });
   }
-
-
 
   @override
   bool setResizeToAvoidBottomInset() {
@@ -139,13 +147,13 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
     );
   }
 
-  // @override
-  // Widget? setDrawer() {
-  //   // TODO: implement setDrawer
-  //   return Column(
-  //     children: [
-  //       const Text('data'),
-  //     ],
-  //   );
-  // }
+// @override
+// Widget? setDrawer() {
+//   // TODO: implement setDrawer
+//   return Column(
+//     children: [
+//       const Text('data'),
+//     ],
+//   );
+// }
 }
