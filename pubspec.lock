@@ -4,12 +4,11 @@ packages:
   app_fundamentals:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "7bfc4d7a99885a557155775500bee0741063cd20"
-      url: "https://github.com/MohamedGhoneem/app_fundamentals.git"
-    source: git
-    version: "0.0.2"
+      name: app_fundamentals
+      sha256: "9c1a074a99ce3cd439e319599ecaf167322488e78b4fc7abf0aa0da650a437f5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   args:
     dependency: transitive
     description:
@@ -118,10 +117,10 @@ packages:
     dependency: transitive
     description:
       name: flavorizer_config
-      sha256: bb5a2ffe9dfa91335cc2cf60b08d766ffde01ce88973d532270127d633e7b142
+      sha256: "26c76a87a97ce16f4f226b2ef32775f45ed1f77dc98cd99c6d4869f5515e2e05"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -191,12 +190,11 @@ packages:
   network_implementation:
     dependency: transitive
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "62e4c8b62e63686778b2b97ff7c7dfce65400fc1"
-      url: "https://github.com/MohamedGhoneem/network_implementation.git"
-    source: git
-    version: "0.0.1"
+      name: network_implementation
+      sha256: dd2775a355191fbc212a526d1a11c24348e18a9c0758c38ea6c03f8d4c0303a0
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   path:
     dependency: transitive
     description:

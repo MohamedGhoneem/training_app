@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter rxdart_bloc example',
       // home: BlocProvider(bloc: ProductsBloc(), child: const ProductsView()),
-      home: MainView(),
+      home: const MainView(),
     );
   }
 }
