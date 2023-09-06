@@ -1,7 +1,9 @@
 import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/features/home/presentation/view/setup_view_mobile.dart';
 
-import '../features/home/view/main_view.dart';
+import '../features/home/presentation/view/main_view.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter rxdart_bloc example',
       // home: BlocProvider(bloc: ProductsBloc(), child: const ProductsView()),
-      home: const MainView(),
+      home: SetUpViewMobile(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../model/products_response_model.dart';
+
+import '../../../data/model/products_response_model.dart';
 
 class ProductsItemWidget extends StatelessWidget {
   final Products? content;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_screen_type/responsive_screen_type.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
-import 'package:untitled/features/products/view/products_view_mobile.dart';
+import 'package:untitled/features/products/presentation/view/products_view_mobile.dart';
 
 import '../bloc/products_bloc.dart';
 
