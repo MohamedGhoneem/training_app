@@ -61,49 +61,26 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-//    flavorDimensions "dev"
-//
-//    productFlavors {
-//        create("dev") {
-//            dimension "dev"
-//            applicationIdSuffix ".dev"
-//            def buildId = defaultConfig.applicationId + '.dev' + defaultConfig.versionCode
-//            def appNameLabel = "AppNameDevel" + 'd' + defaultConfig.versionName
-//            buildConfigField "String", "BUILD_ID", '"' + buildId + '"'
-//            manifestPlaceholders = [app_name_label: appNameLabel, buildId: buildId]
-//
-////            // Print values
-////            println("Devel Flavor - buildId: ${buildId}")
-////            println("Devel Flavor - appNameLabel: ${appNameLabel}")
-//        }
-//
-//        create("stage") {
-//            dimension "stage"
-//            applicationIdSuffix ".stage"
-//            def buildId = defaultConfig.applicationId + '.stage' + defaultConfig.versionCode
-//            def appNameLabel = "AppNameStage" + 'stage' + defaultConfig.versionName
-//            buildConfigField "String", "BUILD_ID", '"' + buildId + '"'
-//            manifestPlaceholders = [app_name_label: appNameLabel, buildId: buildId]
-//
-////            // Print values
-////            println("QA Flavor - buildId: ${buildId}")
-////            println("QA Flavor - appNameLabel: ${appNameLabel}")
-//        }
-//
-//        create("pro") {
-//            dimension "prod"
-//
-//            buildConfigField "String", "BUILD_ID", '"' + defaultConfig.applicationId + '"'
-//            manifestPlaceholders = [app_name_label: "AppName", buildId: defaultConfig.applicationId]
-//
-////            // Print values
-////            println("Pro Flavor - buildId: ${defaultConfig.applicationId}")
-////            println("Pro Flavor - appNameLabel: AppName")
-//        }
-//        // Print values
-////        println("Devel Flavor - buildId: ${buildId}")
-////        println("Devel Flavor - appNameLabel: ${appNameLabel}")
-//    }
+    flavorDimensions "default"
+
+    productFlavors {
+        prod {
+            dimension "default"
+//            resValue "string", "app_name", "Flutter Demo Prod"
+        }
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+//            resValue "string", "app_name", "Flutter Demo Dev"
+            versionNameSuffix ".dev"
+        }
+        stage {
+            dimension "default"
+            applicationIdSuffix ".stage"
+//            resValue "string", "app_name", "Flutter Demo Dev"
+            versionNameSuffix ".stage"
+        }
+    }
 }
 
 flutter {
