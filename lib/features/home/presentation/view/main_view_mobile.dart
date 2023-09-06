@@ -2,9 +2,11 @@ import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/core/user_types/user_strategy_type.dart';
 
-import '../../../core/user_types/base_user_type.dart';
-import '../../products/view/products_view.dart';
+
 import 'package:flavorizer_config/flavorizer_config.dart';
+
+import '../../../../core/user_types/base_user_type.dart';
+import '../../../products/presentation/view/products_view.dart';
 
 class MainViewMobile extends BaseStatefulWidget {
   const MainViewMobile({Key? key}) : super(key: key);
@@ -20,14 +22,14 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
   var encryptedData2;
   var encryptedData3;
   var encryptedData4;
-  int userTypeValue = 0; // The initial value representing the user type
+  //int userTypeValue = 0; // The initial value representing the user type
   UserStrategyType userStrategyType = UserStrategyType();
   BaseUserType? userType;
   FlavorizerConfig flavorizerConfig=FlavorizerConfig.instance;
   @override
   void initState() {
     super.initState();
-    userType = userStrategyType.getUserType(userTypeValue);
+    //userType = userStrategyType.setUserType(userTypeValue);
     debugPrint('flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables?.toString()}');
     _encryptor.init();
     navBarBloc.naveBarItemList = [
@@ -121,6 +123,7 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
                 color: Colors.blue,
                 height: 1000,
                 width: 1000,
+                child: Center(child: Text(userStrategyType.baseUserType?.getTitle() ?? "")),
               );
         });
   }

@@ -2,8 +2,8 @@ import 'dart:isolate';
 import 'package:network_implementation/network_implementation.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/core/models/error_model.dart';
+import '../../domain/products_repo_interface.dart';
 import '../model/products_response_model.dart';
-import 'products_repo_interface.dart';
 
 class ProductsRepo implements ProductsRepoInterface {
   final NetworkImplementation _network =

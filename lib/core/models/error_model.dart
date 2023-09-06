@@ -24,27 +24,27 @@ class ErrorModel extends BaseModel<ErrorModel> {
         message = exception.response?.data['message'];
       case SocketException():
         statusCode = 0;
-        message = exception.message;
+        message = exception.message.toString();
         break;
 
       case FormatException():
         statusCode = 0;
-        message = exception.message;
+        message = exception.message.toString();
         break;
 
       case TimeoutException():
         statusCode = 0;
-        message = exception.message;
+        message = exception.message.toString();
         break;
 
       case HttpException():
         statusCode = 0;
-        message = exception.message;
+        message = exception.message.toString();
         break;
 
       default:
         statusCode = 0;
-        message = exception;
+        message = exception.toString();
     }
   }
 
