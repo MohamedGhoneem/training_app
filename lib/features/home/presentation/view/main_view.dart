@@ -12,8 +12,9 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenTypeLayout(
-      mobile: userStrategyType.baseUserType?.getRegisterView() ?? Container()
+    return  const ScreenTypeLayout(
+      mobile: MainViewMobile()
+      // mobile: userStrategyType.baseUserType?.getRegisterView() ?? Container()
     );
   }
 }

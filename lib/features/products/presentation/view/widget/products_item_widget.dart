@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/features/products/data/model/product_model.dart';
 
-import '../../../data/model/products_response_model.dart';
 
 class ProductsItemWidget extends StatelessWidget {
-  final Products? content;
+  final ProductModel? content;
 
-  const ProductsItemWidget({Key? key, required this.content})
-      : super(key: key);
+  const ProductsItemWidget({Key? key, required this.content}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,10 @@ class ProductsItemWidget extends StatelessWidget {
       child: Text(
         content?.title ?? '',
         style: const TextStyle(
-            fontFamily: '', fontSize: 18, color: Colors.black),
+          fontFamily: '',
+          fontSize: 18,
+          color: Colors.black,
+        ),
       ),
     );
   }

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/features/products/presentation/view/widget/products_item_widget.dart';
 
-import '../../data/model/products_response_model.dart';
+import '../../data/model/products_model.dart';
 import '../bloc/products_bloc.dart';
 
 
@@ -28,7 +28,7 @@ class _ProductsViewMobileState extends BaseState<ProductsViewMobile> {
 
   @override
   Widget setBody(BuildContext context) {
-    return StreamBuilder<GetAllProductsResponseModel>(
+    return StreamBuilder<ProductsModel>(
         stream: bloc.successStream,
         builder: (context, snapshot) {
           return StreamingResult(
@@ -44,7 +44,7 @@ class _ProductsViewMobileState extends BaseState<ProductsViewMobile> {
                       ),
                       AppImage(
                           path: snapshot.data?.products![index].images?.first ??
-                              '')
+                              '',)
                     ],
                   );
                 }),
