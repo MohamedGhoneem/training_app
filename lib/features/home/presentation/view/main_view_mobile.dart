@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/core/user_types/user_strategy_type.dart';
 import 'package:flavorizer_config/flavorizer_config.dart';
+import 'package:untitled/features/products/presentation/pages/products_page.dart';
 
 import '../../../../core/user_types/base_user_type.dart';
-import '../../../products/presentation/view/products_view.dart';
 
 class MainViewMobile extends BaseStatefulWidget {
   const MainViewMobile({Key? key}) : super(key: key);
@@ -71,7 +71,7 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
       ),
       NavBarItem(
         title: 'Products',
-        widget: const ProductsView(),
+        widget: const ProductsPage(),
         selectedIcon: const Icon(
           Icons.account_box_outlined,
           color: Colors.red,

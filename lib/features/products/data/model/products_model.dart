@@ -1,12 +1,14 @@
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/features/products/data/model/product_model.dart';
-
 import '../../domain/entities/products_entity.dart';
 
 class ProductsModel extends ProductsEntity implements BaseModel<ProductsModel> {
-  ProductsModel(
-      {List<ProductModel>? products, int? total, int? skip, int? limit})
-      : super(products: products, total: total, skip: skip, limit: limit);
+  ProductsModel({
+    List<ProductModel>? products,
+    int? total,
+    int? skip,
+    int? limit,
+  }) : super(products: products, total: total, skip: skip, limit: limit);
 
   ProductsModel.fromJson(Map<String, dynamic> json) {
     if (json['products'] != null) {

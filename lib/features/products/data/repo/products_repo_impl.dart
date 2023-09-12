@@ -1,19 +1,14 @@
-import 'dart:convert';
-import 'dart:isolate';
+// ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 
+import 'dart:isolate';
 import 'package:network_implementation/network_implementation.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/core/models/error_model.dart';
+import 'package:untitled/features/products/domain/repositories/products_repo.dart';
 import '../../../../core/my_app.dart';
-import '../../domain/interfaces/products_repo_interface.dart';
 import '../model/products_model.dart';
-import 'package:nirikshak/nirikshak.dart';
 
-
-Nirikshak nirikshak = Nirikshak();
-
-class ProductsRepo implements ProductsRepoInterface {
-
+class ProductsRepoImpl implements ProductsRepo {
   final NetworkImplementation _network =
       NetworkImplementation.instance('https://dummyjson.com/');
   final NetworkImplementation _network2 =

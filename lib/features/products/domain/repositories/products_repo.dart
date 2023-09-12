@@ -1,3 +1,4 @@
+import 'package:rxdart_bloc/rxdart_bloc.dart';
 
 // Can be constructed and implemented, but not extended nor mixed in.
 //  interface class CountriesRepoInterface{
@@ -15,10 +16,7 @@
 // Future<BaseModel> getCountries();
 // }
 
-
-import 'package:rxdart_bloc/rxdart_bloc.dart';
-
-abstract interface class ProductsRepoInterface {
+abstract interface class ProductsRepo {
   Future<BaseModel> getProducts();
   Future<BaseModel> getProducts2();
 }

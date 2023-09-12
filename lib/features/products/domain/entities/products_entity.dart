@@ -1,7 +1,7 @@
 
 import 'package:untitled/features/products/data/model/product_model.dart';
 
- class ProductsEntity {
+  class ProductsEntity {
   List<ProductModel>? products;
   int? total;
   int? skip;
