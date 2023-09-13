@@ -1,4 +1,6 @@
 
+import 'package:flutter/cupertino.dart';
+
 import '../../domain/entities/product_entity.dart';
 
 class ProductModel extends ProductEntity {

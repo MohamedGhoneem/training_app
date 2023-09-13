@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-
+import 'package:flutter/cupertino.dart';
 class ProductEntity extends Equatable{
   int? id;
   String? title;
