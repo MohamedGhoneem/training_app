@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
-class ProductEntity extends Equatable{
+class ProductEntity {
   int? id;
   String? title;
   String? description;
@@ -28,6 +26,12 @@ class ProductEntity extends Equatable{
   });
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [id];
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ProductEntity &&
+          runtimeType == other.runtimeType &&
+          id == other.id;
+
+  @override
+  int get hashCode => id.hashCode ^ id.hashCode;
 }
