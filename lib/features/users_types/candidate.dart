@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/core/user_types/base_user_type.dart';
-import 'package:untitled/features/home/presentation/view/candidate_register_mobile_view.dart';
+
+import '../home/presentation/pages/candidate_register_mobile_view.dart';
 
 class Candidate extends BaseUserType {
   @override

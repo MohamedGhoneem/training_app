@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/features/home/presentation/view/team_lead_register_mobile_view.dart';
 import '../../core/user_types/base_user_type.dart';
+import '../home/presentation/pages/team_lead_register_mobile_view.dart';
 
 class TeamLead extends BaseUserType {
   @override

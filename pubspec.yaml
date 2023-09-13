@@ -37,7 +37,6 @@ dependencies:
   app_fundamentals:
     git:  https://github.com/MohamedGhoneem/app_fundamentals
   flutter_launcher_icons: ^0.13.1
-  dartz: ^0.10.1
 
 #  chucker_flutter: ^1.5.2
 #  alice: ^0.3.3

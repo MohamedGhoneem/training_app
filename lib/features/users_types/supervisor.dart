@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/features/home/presentation/view/supervisor_register_mobile_view.dart';
 import '../../core/user_types/base_user_type.dart';
+import '../home/presentation/pages/supervisor_register_mobile_view.dart';
 
 class Supervisor extends BaseUserType {
   @override

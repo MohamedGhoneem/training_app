@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/core/user_types/base_user_type.dart';
-import 'package:untitled/features/home/presentation/view/voter_register_mobile_view.dart';
+
+import '../home/presentation/pages/voter_register_mobile_view.dart';
 
 class Voter extends BaseUserType {
   @override
