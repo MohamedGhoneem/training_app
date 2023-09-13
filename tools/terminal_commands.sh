@@ -23,5 +23,4 @@
 ## FIX LINT RULES WARNING
 #dart fix
 #flutter fix
-#dart fix --dry-run
-#dart fix --apply
+dart fix --dry-run && dart fix --apply
