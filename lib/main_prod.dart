@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/core/my_app.dart';
 
-import 'core/flavor_variables_model.dart';
+import '../core/flavor_variables_model.dart';
 import 'package:flavorizer_config/flavorizer_config.dart';
 
 

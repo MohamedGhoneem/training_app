@@ -6,7 +6,7 @@
 ##This command is deprecated and replaced with "flutter pub run flutter_launcher_icons"
 #
 ## Run commands
-#flutter run -t lib/main_dev.dart --flavor dev           #DEBUG MODE
+#flutter run --debug -t lib/main_dev.dart --flavor dev           #DEBUG MODE
 #flutter run --profile -t lib/main_dev.dart --flavor dev #PROFILE MODE
 #flutter run --release -t lib/main_dev.dart --flavor dev #RELAESE MODE
 #
@@ -23,4 +23,4 @@
 ## FIX LINT RULES WARNING
 #dart fix
 #flutter fix
-dart fix --dry-run && dart fix --apply
+#dart fix --dry-run && dart fix --apply
