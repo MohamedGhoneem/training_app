@@ -1,4 +1,7 @@
+import 'package:untitled/features/users_types/admin.dart';
 import 'package:untitled/features/users_types/candidate.dart';
+import 'package:untitled/features/users_types/employee.dart';
+import 'package:untitled/features/users_types/guest.dart';
 import 'package:untitled/features/users_types/voter.dart';
 import 'base_user_type.dart';
 
@@ -23,8 +26,9 @@ class UserStrategyType {
 
   // Method to fill the typeMap with user types
   _fillTypeMap() {
-    typeMap[0] = Candidate(); // Assign the Candidate type to index 0
-    typeMap[1] = Voter(); // Assign the Voter type to index 1
+    typeMap[0] = Admin(); // Assign the Candidate type to index 0
+    typeMap[1] = Employee();
+    typeMap[2] = Guest();// Assign the Voter type to index 1
   }
 
   // Method to get the user type based on the given value

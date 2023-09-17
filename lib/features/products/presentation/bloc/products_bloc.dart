@@ -1,13 +1,18 @@
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/core/models/error_model.dart';
-import '../model/products_response_model.dart';
-import '../repo/products_repo.dart';
+import '../../data/model/products_response_model.dart';
+import '../../data/repo/products_repo.dart';
+
 
 class ProductsBloc extends BaseBloc
-    with RxdartBlocState<GetAllProductsResponseModel, ErrorModel> {
+    with RxdartBlocState<GetAllProductsResponseModel, ErrorModel>  {
   BehaviorSubject<RequestState> requestStateSubject = BehaviorSubject.seeded(
       RequestState(status: RequestStatus.loading, message: ''));
-  final ProductsRepo _productsRepo = ProductsRepo();
+  late  ProductsRepo _productsRepo = ProductsRepo();
+
+  set productsRepo(ProductsRepo repo) {
+    _productsRepo = repo;
+  }
 
   Future checkIsolate() async {
     // var isolateThread = IsolateThread();

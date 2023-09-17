@@ -8,7 +8,7 @@ class GetAllProductsResponseModel
   int? skip;
   int? limit;
 
-  GetAllProductsResponseModel(
+  GetAllProductsResponseModel(List<Products> list, 
       {this.products, this.total, this.skip, this.limit});
 
   GetAllProductsResponseModel.fromJson(Map<String, dynamic> json) {

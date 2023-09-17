@@ -2,11 +2,10 @@ import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
-import 'package:untitled/features/products/view/widget/products_item_widget.dart';
-
-import '../../../core/user_types/user_strategy_type.dart';
+import 'package:untitled/features/products/presentation/view/widget/products_item_widget.dart';
+import '../../data/model/products_response_model.dart';
 import '../bloc/products_bloc.dart';
-import '../model/products_response_model.dart';
+
 
 class ProductsViewMobile extends BaseStatefulWidget {
   const ProductsViewMobile({Key? key}) : super(key: key);
@@ -20,6 +19,7 @@ class _ProductsViewMobileState extends BaseState<ProductsViewMobile> {
 
   @override
   void initState() {
+
     super.initState();
     bloc = BlocProvider.of<ProductsBloc>(context);
     bloc.getProducts();

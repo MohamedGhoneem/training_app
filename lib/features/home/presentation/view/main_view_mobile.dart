@@ -2,9 +2,11 @@ import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/core/user_types/user_strategy_type.dart';
 
-import '../../../core/user_types/base_user_type.dart';
-import '../../products/view/products_view.dart';
 import 'package:flavorizer_config/flavorizer_config.dart';
+
+import '../../../../core/user_types/base_user_type.dart';
+import '../../../products/presentation/view/products_view.dart';
+import 'home_widget.dart';
 
 class MainViewMobile extends BaseStatefulWidget {
   const MainViewMobile({Key? key}) : super(key: key);
@@ -15,7 +17,7 @@ class MainViewMobile extends BaseStatefulWidget {
 
 class _MainViewMobileState extends BaseState<MainViewMobile> {
   DateTime? currentBackPressTime;
-  Encryptor _encryptor = Encryptor();
+  final Encryptor _encryptor = Encryptor();
   var encryptedData1;
   var encryptedData2;
   var encryptedData3;
@@ -23,21 +25,19 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
   int userTypeValue = 0; // The initial value representing the user type
   UserStrategyType userStrategyType = UserStrategyType();
   BaseUserType? userType;
-  FlavorizerConfig flavorizerConfig=FlavorizerConfig.instance;
+  FlavorizerConfig flavorizerConfig = FlavorizerConfig.instance;
+
   @override
   void initState() {
     super.initState();
     userType = userStrategyType.getUserType(userTypeValue);
-    debugPrint('flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables?.toString()}');
+    FlavorizerConfig flavorizerConfig = FlavorizerConfig(appTitle: "My App");
+    // debugPrint('flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables?.toString()}');
     _encryptor.init();
     navBarBloc.naveBarItemList = [
       NavBarItem(
           title: 'Main',
-          widget: Container(
-            height: 1000,
-            width: 1000,
-            color: Colors.blue,
-          ),
+          widget: const HomeWidget(),
           selectedIcon: const Icon(
             Icons.import_contacts_sharp,
             color: Colors.red,
@@ -111,17 +111,17 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
     ];
   }
 
+  String getUserCategory() {
+    return 'Admin'; // Example category for demonstration.
+  }
+
   @override
   Widget setBody(BuildContext context) {
     return StreamBuilder<Widget>(
         stream: navBarBloc.selectedWidget.stream,
         builder: (context, snapshot) {
           return snapshot.data ??
-              Container(
-                color: Colors.blue,
-                height: 1000,
-                width: 1000,
-              );
+              const HomeWidget();
         });
   }
 
@@ -146,14 +146,4 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
       unSelectedColor: Colors.black,
     );
   }
-
-// @override
-// Widget? setDrawer() {
-//   // TODO: implement setDrawer
-//   return Column(
-//     children: [
-//       const Text('data'),
-//     ],
-//   );
-// }
 }

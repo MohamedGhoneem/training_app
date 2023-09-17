@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:untitled/core/user_types/base_user_type.dart';
+
+import 'package:flutter/cupertino.dart';
+
+import '../../core/user_types/base_user_type.dart';
 
 class Voter extends BaseUserType {
   @override
