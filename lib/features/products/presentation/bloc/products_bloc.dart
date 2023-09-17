@@ -3,12 +3,14 @@ import 'package:untitled/core/models/error_model.dart';
 import 'package:untitled/features/products/data/model/products_model.dart';
 
 import '../../data/repo/products_repo_impl.dart';
+import '../../domain/repositories/products_repo.dart';
 
 class ProductsBloc extends BaseBloc
     with RxdartBlocState<ProductsModel, ErrorModel> {
+  ProductsBloc(this.productsRepo);
   BehaviorSubject<RequestState> requestStateSubject = BehaviorSubject.seeded(
       RequestState(status: RequestStatus.loading, message: ''));
-  final ProductsRepoImpl _productsRepo = ProductsRepoImpl();
+  final ProductsRepo productsRepo;
 
   Future checkIsolate() async {
     // var isolateThread = IsolateThread();
@@ -18,7 +20,7 @@ class ProductsBloc extends BaseBloc
 
   Future getProducts() async {
     checkIsolate();
-    final model = await _productsRepo.getProducts();
+    final model = await productsRepo.getProducts();
     // var model2 = await _productsRepo.getProducts2();
     if (model is ProductsModel) {
       super.successSubject.sink.add(model);

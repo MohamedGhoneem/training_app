@@ -22,7 +22,7 @@ class ProductsRepoImpl implements ProductsRepo {
         endpoint: 'products',
         headers: {'lang': 'en'},
       );
-      _network.nirikshak.showNirikshak(navigatorKey.currentState!.context);
+      //_network.nirikshak.showNirikshak(navigatorKey.currentState!.context);
       return ProductsModel.fromJson(
         response?.data,
       );

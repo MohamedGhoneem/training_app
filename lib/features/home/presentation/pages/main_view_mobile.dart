@@ -25,14 +25,15 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
   //int userTypeValue = 0; // The initial value representing the user type
   UserStrategyType userStrategyType = UserStrategyType();
   BaseUserType? userType;
-  FlavorizerConfig flavorizerConfig = FlavorizerConfig.instance;
+
+  // FlavorizerConfig flavorizerConfig = FlavorizerConfig.instance;
 
   @override
   void initState() {
     super.initState();
     //userType = userStrategyType.setUserType(userTypeValue);
-    debugPrint(
-        'flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables}',);
+    // debugPrint(
+    //     'flavorizerConfig.variables?.toString() : ${flavorizerConfig.variables}',);
     _encryptor.init();
     navBarBloc.naveBarItemList = [
       NavBarItem(
@@ -152,12 +153,15 @@ class _MainViewMobileState extends BaseState<MainViewMobile> {
       builder: (context, snapshot) {
         return snapshot.data ??
             Container(
-              color: Colors.blue,
-              height: 1000,
-              width: 1000,
-              child: Center(
-                  child: Text(userStrategyType.baseUserType?.getTitle() ?? ""),),
-            );
+                color: Colors.blue,
+                height: 1000,
+                width: 1000,
+                child: Center(
+                    child: Center(
+                        child: Text(
+                  "Main",
+                  style: TextStyle(color: Colors.white),
+                ))));
       },
     );
   }

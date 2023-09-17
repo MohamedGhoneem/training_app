@@ -2,6 +2,7 @@ import 'package:app_fundamentals/app_fundamentals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
+import 'package:untitled/features/products/data/repo/products_repo_impl.dart';
 import 'package:untitled/features/products/presentation/widgets/products_item_widget.dart';
 
 import '../../data/model/products_model.dart';
@@ -21,7 +22,7 @@ class _ProductsPageMobileState extends BaseState<ProductsPageMobile> {
   @override
   void initState() {
     super.initState();
-    bloc = BlocProvider.of<ProductsBloc>(context);
+    bloc = ProductsBloc(ProductsRepoImpl());
     bloc.getProducts();
     listenForResponse(bloc).listen((event) { });
   }
