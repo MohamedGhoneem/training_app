@@ -2,23 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:responsive_screen_type/responsive_screen_type.dart';
 import 'package:rxdart_bloc/rxdart_bloc.dart';
 import 'package:untitled/features/products/data/model/product_model.dart';
 import 'package:untitled/features/products/data/model/products_model.dart';
-import 'package:untitled/features/products/domain/repositories/products_repo.dart';
 import 'package:untitled/features/products/presentation/bloc/products_bloc.dart';
 import 'package:untitled/features/products/presentation/pages/products_page_mobile.dart';
 
-import 'products_widgets_test.mocks.dart';
+import '../../data/repo/products_repo_test.dart';
 
-@GenerateMocks([ProductsRepo, ProductsBloc])
 void main() {
 
   late ProductsBloc bloc;
-  final mockProductsRepo = MockProductsRepo();
   setUp(() {
     bloc = ProductsBloc(mockProductsRepo);
   });
