@@ -10,7 +10,7 @@ class ProductsBloc extends BaseBloc
   ProductsBloc(this.productsRepo);
   BehaviorSubject<RequestState> requestStateSubject = BehaviorSubject.seeded(
       RequestState(status: RequestStatus.loading, message: ''));
-  final ProductsRepo productsRepo;
+  ProductsRepo productsRepo;
 
   Future checkIsolate() async {
     // var isolateThread = IsolateThread();
@@ -18,7 +18,7 @@ class ProductsBloc extends BaseBloc
     // log('Isolate Response: $response'); // Print the response from the isolate
   }
 
-  Future getProducts() async {
+  Future<BaseModel> getProducts() async {
     checkIsolate();
     final model = await productsRepo.getProducts();
     // var model2 = await _productsRepo.getProducts2();
@@ -35,6 +35,7 @@ class ProductsBloc extends BaseBloc
       requestStateSubject.sink.add(RequestState(
           status: RequestStatus.error, message: model.message ?? '',),);
     }
+    return model;
   }
 
   @override
